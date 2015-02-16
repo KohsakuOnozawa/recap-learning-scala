@@ -8,14 +8,14 @@ import scala.util.matching.Regex.Match
 object FizzBuzz {
   def main(args: Array[String]) {
     val list = 1 to 100
-    list.foreach(print)
+    list.filterNot(n => n % 2 == 0).foreach(print)
   }
   def print(i : Int) = {
       i match {
-        case `i` if i % 3 == 0 && i % 5 == 0 => println("FizzBuzz")
-        case `i` if i % 3 == 0 => println("Fizz")
-        case `i` if i % 5 == 0 => println("Buzz")
-        case _ => println(i)
+        case n if n % 15 == 0 => println("FizzBuzz")
+        case n if n % 3 == 0 => println("Fizz")
+        case n if n % 5 == 0 => println("Buzz")
+        case n => println(n)
       }
   }
 }
